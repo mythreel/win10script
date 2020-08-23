@@ -8,7 +8,7 @@
 #    Use the @Disassembler0 script instead. It'll probably be more up-to-date than mine:
 #    https://github.com/Disassembler0/Win10-Initial-Setup-Script
 # 
-#    Note from author: Never run scripts without reading them   understanding what they do.
+#    Note from author: Never run scripts without reading them & understanding what they do.
 #
 #	Addition: One command to rule them all, One command to find it, and One command to Run it! 
 #
@@ -19,7 +19,7 @@
 #	- Dark Mode
 #	- One Command to launch and run
 #	- Chocolatey Install
-#	- O O Shutup10 CFG and Run
+#	- O&O Shutup10 CFG and Run
 #	- Added Install Programs
 #	- Added Debloat Microsoft Store Apps
 #
@@ -34,7 +34,7 @@ $tweaks = @(
 	"InstallAdobe",
 	"Install7Zip",
 	"InstallNotepadplusplus",
-	"InstallCode",
+    "InstallCode",
 	"InstallMediaPlayerClassic",
 
 	### Windows Apps
@@ -192,10 +192,10 @@ $tweaks = @(
 #########
 
 Function InstallTitusProgs {
-	Write-Output "Installing Scoop"
-	Set-ExecutionPolicy RemoteSigned -scope CurrentUser -force
-	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-	Write-Output "Running O O Shutup with Recommended Settings"
+	Write-Output "Installing Chocolatey"
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	choco install chocolatey-core.extension -y
+	Write-Output "Running O&O Shutup with Recommended Settings"
 	Import-Module BitsTransfer
 	Start-BitsTransfer -Source "https://raw.githubusercontent.com/mythreel/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg
 	Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
@@ -203,32 +203,32 @@ Function InstallTitusProgs {
 }
 
 Function InstallAdobe {
-	Write-Output "Installing Foxit Reader"
-	scoop install foxit-reader
+	Write-Output "Installing Adobe Acrobat Reader"
+	choco install adobereader -y
 }
 
 Function InstallJava {
 	Write-Output "Installing Java"
-	scoop install jre8
+	choco install jre8 -y
 }
 
 Function Install7Zip {
 	Write-Output "Installing 7-Zip"
-	scoop install 7zip 
+	choco install 7zip -y
 }
 
 Function InstallNotepadplusplus {
 	Write-Output "Installing Notepad++"
-	scoop install notepadplusplus 
+	choco install notepadplusplus -y
 }
 
 Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
-	scoop install mpc-hc 
+	choco install mpc-hc -y
 }
-Function InstallCode {
+Function InstallCode{
 	Write-Output "Installing VSCode"
-	scoop install vscode 
+	choco install vscode -y
 }
 ##########
 # Privacy Tweaks
