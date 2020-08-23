@@ -186,8 +186,8 @@ $tweaks = @(
 
 Function InstallTitusProgs {
 	Write-Output "Installing Scoop"
-	Set-ExecutionPolicy Unrestricted -force
-	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+	#Set-ExecutionPolicy Unrestricted -force
+#	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 	Write-Output "Running OO Shutup with Recommended Settings"
 	Import-Module BitsTransfer
 	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg
