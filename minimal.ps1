@@ -8,7 +8,7 @@
 #    Use the @Disassembler0 script instead. It'll probably be more up-to-date than mine:
 #    https://github.com/Disassembler0/Win10-Initial-Setup-Script
 # 
-#    Note from author: Never run scripts without reading them & understanding what they do.
+#    Note from author: Never run scripts without reading them  understanding what they do.
 #
 #	Addition: One command to rule them all, One command to find it, and One command to Run it! 
 #
@@ -19,7 +19,6 @@
 #	- Dark Mode
 #	- One Command to launch and run
 #	- Chocolatey Install
-#	- O&O Shutup10 CFG and Run
 #	- Added Install Programs
 #	- Added Debloat Microsoft Store Apps
 #
@@ -189,7 +188,7 @@ Function InstallTitusProgs {
 	Write-Output "Installing Scoop"
 	Set-ExecutionPolicy Unrestricted -force
 	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-	Write-Output "Running O&O Shutup with Recommended Settings"
+	Write-Output "Running OO Shutup with Recommended Settings"
 	Import-Module BitsTransfer
 	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg
 	Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
