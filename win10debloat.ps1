@@ -204,31 +204,31 @@ Function InstallTitusProgs {
 
 Function InstallAdobe {
 	Write-Output "Installing Adobe Acrobat Reader"
-	scoop install adobereader -y
+	scoop install adobereader
 }
 
 Function InstallJava {
 	Write-Output "Installing Java"
-	scoop install jre8 -y
+	scoop install jre8
 }
 
 Function Install7Zip {
 	Write-Output "Installing 7-Zip"
-	scoop install 7zip -y
+	scoop install 7zip 
 }
 
 Function InstallNotepadplusplus {
 	Write-Output "Installing Notepad++"
-	scoop install notepadplusplus -y
+	scoop install notepadplusplus 
 }
 
 Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
-	scoop install mpc-hc -y
+	scoop install mpc-hc 
 }
 Function InstallCode {
 	Write-Output "Installing VSCode"
-	scoop install vscode -y
+	scoop install vscode 
 }
 ##########
 # Privacy Tweaks
