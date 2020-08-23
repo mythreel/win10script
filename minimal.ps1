@@ -187,7 +187,7 @@ $tweaks = @(
 
 Function InstallTitusProgs {
 	Write-Output "Installing Scoop"
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr -useb get.scoop.sh | iex)
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh'))
 	#iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')
 	#choco install chocolatey-core.extension -y
 	Write-Output "Running O&O Shutup with Recommended Settings"
