@@ -203,8 +203,8 @@ Function InstallTitusProgs {
 }
 
 Function InstallAdobe {
-	Write-Output "Installing Adobe Acrobat Reader"
-	scoop install adobereader
+	Write-Output "Installing Foxit Reader"
+	scoop install foxit-reader
 }
 
 Function InstallJava {
